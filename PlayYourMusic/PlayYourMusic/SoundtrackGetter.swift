@@ -8,7 +8,22 @@
 
 import Foundation
 
+// The delegate's didNotGetTrack method is called if either :
+// - The track was not acquired from the iTunes search API
+// - The received track data could not be converted from JSON into a dictionary
+
+protocol SoundtrackGetterDelegate {
+    func didGetSoundTracks(soundTracks: [Soundtrack])
+    func didNotGetSoundTracks(error: NSError)
+}
+
 class SoundtrackGetter {
+    
+    private var delegate : SoundtrackGetterDelegate
+    
+    init(delegate: SoundtrackGetterDelegate) {
+        self.delegate = delegate
+    }
     
     var soundTracks: [Soundtrack] = []
     
@@ -39,15 +54,17 @@ class SoundtrackGetter {
                     for entry in soundtrackData["results"] as! [NSDictionary] {
                         let soundtrack = Soundtrack(data: entry as! [String : AnyObject])
                         self.soundTracks.append(soundtrack)
-                        print(soundtrack.trackName)
                     }
+                    //print(self.soundTracks[0].trackName)
                     
-                    //print("Track title:\(self.soundTracks[0][8])")
-                    //print(self.soundTracks)
+                    //notify changes to the delegate
+                    self.delegate.didGetSoundTracks(self.soundTracks)
+                    
                     
                 } catch let jsonError as NSError {
                     // throw error if conversion process encounters error
-                    print("JSON error description: \(jsonError.description)")
+                    //print("JSON error description: \(jsonError.description)")
+                    self.delegate.didNotGetSoundTracks(jsonError)
                 }
             }
         }

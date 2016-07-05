@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, SoundtrackGetterDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let soundtrack = SoundtrackGetter()
+        let soundtrack = SoundtrackGetter(delegate: self)
         soundtrack.getSoundtrack()
     }
 
@@ -22,6 +22,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    func didGetSoundTracks(soundTracks: [Soundtrack]) {
+        print("Track title:\n\(soundTracks[0].trackName)")
+    }
+    
+    func didNotGetSoundTracks(error: NSError) {
+        print("didNotGetSoundTrack error: \(error)")
+    }
 }
 
