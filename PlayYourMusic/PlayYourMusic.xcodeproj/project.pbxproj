@@ -15,6 +15,7 @@
 		C61D9D161D2A967200AB9B5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C61D9D141D2A967200AB9B5D /* LaunchScreen.storyboard */; };
 		C61D9D1E1D2A968F00AB9B5D /* Soundtrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D9D1D1D2A968F00AB9B5D /* Soundtrack.swift */; };
 		C61D9D201D2A9E0000AB9B5D /* SoundtrackGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D9D1F1D2A9E0000AB9B5D /* SoundtrackGetter.swift */; };
+		C61ECC5C1D2CE36400FC1E59 /* SoundtrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61ECC5B1D2CE36400FC1E59 /* SoundtrackCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C61D9D171D2A967200AB9B5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C61D9D1D1D2A968F00AB9B5D /* Soundtrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Soundtrack.swift; sourceTree = "<group>"; };
 		C61D9D1F1D2A9E0000AB9B5D /* SoundtrackGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundtrackGetter.swift; sourceTree = "<group>"; };
+		C61ECC5B1D2CE36400FC1E59 /* SoundtrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundtrackCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				C61D9D0A1D2A967200AB9B5D /* ViewController.swift */,
 				C61D9D1D1D2A968F00AB9B5D /* Soundtrack.swift */,
 				C61D9D1F1D2A9E0000AB9B5D /* SoundtrackGetter.swift */,
+				C61ECC5B1D2CE36400FC1E59 /* SoundtrackCell.swift */,
 				C61D9D0C1D2A967200AB9B5D /* Main.storyboard */,
 				C61D9D121D2A967200AB9B5D /* Assets.xcassets */,
 				C61D9D141D2A967200AB9B5D /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 				C61D9D1E1D2A968F00AB9B5D /* Soundtrack.swift in Sources */,
 				C61D9D091D2A967200AB9B5D /* AppDelegate.swift in Sources */,
 				C61D9D111D2A967200AB9B5D /* PlayYourMusic.xcdatamodeld in Sources */,
+				C61ECC5C1D2CE36400FC1E59 /* SoundtrackCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +307,7 @@
 				C61D9D1C1D2A967200AB9B5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
