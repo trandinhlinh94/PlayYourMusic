@@ -9,7 +9,14 @@
 import UIKit
 
 class SoundtrackCell: UITableViewCell {
-
+    
+    // MARK PROPERTIES
+    @IBOutlet weak var posterImage: UIImageView!
+    @IBOutlet weak var artistName: UILabel!
+    @IBOutlet weak var trackName: UILabel!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
