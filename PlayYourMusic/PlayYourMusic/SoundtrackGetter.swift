@@ -60,7 +60,6 @@ class SoundtrackGetter {
                     //notify changes to the delegate
                     self.delegate.didGetSoundTracks(self.soundTracks)
                     
-                    
                 } catch let jsonError as NSError {
                     // throw error if conversion process encounters error
                     //print("JSON error description: \(jsonError.description)")

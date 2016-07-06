@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C61D9D091D2A967200AB9B5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D9D081D2A967200AB9B5D /* AppDelegate.swift */; };
-		C61D9D0B1D2A967200AB9B5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D9D0A1D2A967200AB9B5D /* ViewController.swift */; };
+		C61D9D0B1D2A967200AB9B5D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D9D0A1D2A967200AB9B5D /* ListViewController.swift */; };
 		C61D9D0E1D2A967200AB9B5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C61D9D0C1D2A967200AB9B5D /* Main.storyboard */; };
 		C61D9D111D2A967200AB9B5D /* PlayYourMusic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C61D9D0F1D2A967200AB9B5D /* PlayYourMusic.xcdatamodeld */; };
 		C61D9D131D2A967200AB9B5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C61D9D121D2A967200AB9B5D /* Assets.xcassets */; };
@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		C61D9D051D2A967200AB9B5D /* PlayYourMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayYourMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C61D9D081D2A967200AB9B5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C61D9D0A1D2A967200AB9B5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C61D9D0A1D2A967200AB9B5D /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		C61D9D0D1D2A967200AB9B5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C61D9D101D2A967200AB9B5D /* PlayYourMusic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlayYourMusic.xcdatamodel; sourceTree = "<group>"; };
 		C61D9D121D2A967200AB9B5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				C61D9D081D2A967200AB9B5D /* AppDelegate.swift */,
-				C61D9D0A1D2A967200AB9B5D /* ViewController.swift */,
+				C61D9D0A1D2A967200AB9B5D /* ListViewController.swift */,
 				C61D9D1D1D2A968F00AB9B5D /* Soundtrack.swift */,
 				C61D9D1F1D2A9E0000AB9B5D /* SoundtrackGetter.swift */,
 				C61ECC5B1D2CE36400FC1E59 /* SoundtrackCell.swift */,
@@ -148,7 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C61D9D0B1D2A967200AB9B5D /* ViewController.swift in Sources */,
+				C61D9D0B1D2A967200AB9B5D /* ListViewController.swift in Sources */,
 				C61D9D201D2A9E0000AB9B5D /* SoundtrackGetter.swift in Sources */,
 				C61D9D1E1D2A968F00AB9B5D /* Soundtrack.swift in Sources */,
 				C61D9D091D2A967200AB9B5D /* AppDelegate.swift in Sources */,

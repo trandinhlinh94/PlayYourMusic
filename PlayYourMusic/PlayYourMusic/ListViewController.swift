@@ -1,0 +1,70 @@
+//
+//  ViewController.swift
+//  PlayYourMusic
+//
+//  Created by Linh Tran on 04/07/16.
+//  Copyright © 2016 Linh Tran. All rights reserved.
+//
+
+import UIKit
+
+class ListViewController: UIViewController, SoundtrackGetterDelegate, UITableViewDataSource, UITableViewDelegate {
+    
+    // MARK PROPERTIES
+    @IBOutlet weak var tableView: UITableView!
+    var soundTracks :[Soundtrack] = []
+    var soundtrackGetter : SoundtrackGetter!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        soundtrackGetter = SoundtrackGetter(delegate: self)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 100
+        self.tableView.reloadData()
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    func didGetSoundTracks(soundtracks: [Soundtrack]) {
+        
+        self.soundTracks = soundtracks
+        print("Track title:\n\(soundTracks[0].trackName)")
+    }
+    
+    func didNotGetSoundTracks(error: NSError) {
+        print("didNotGetSoundTrack error: \(error)")
+    }
+    
+    // customize the table view
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.soundTracks.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell:SoundtrackCell = self.tableView.dequeueReusableCellWithIdentifier("soundtrackCell") as! SoundtrackCell
+        cell.posterImage.image = nil
+        let soundtrack = self.soundTracks[indexPath.row]
+        let imagedata = NSData(contentsOfURL: NSURL(string: soundtrack.thumbnail)!)
+        if let tmpdata = imagedata {
+            cell.posterImage.image = UIImage(data: tmpdata)
+        }
+        cell.artistName.text = soundtrack.artistName
+        cell.trackName.text = soundtrack.trackName
+        print("Track title:\n\(self.soundTracks[0].trackName)")
+        return cell
+    }
+
+}
+
