@@ -71,7 +71,6 @@ class ListViewController: UIViewController, SoundtrackGetterDelegate, UITableVie
             }
             cell.artistName.text = soundtrack.artistName
             cell.trackName.text = soundtrack.trackName
-            print("Track title:\n\(self.soundTracks[0].trackName)")
             return cell
         }
     
@@ -84,5 +83,7 @@ class ListViewController: UIViewController, SoundtrackGetterDelegate, UITableVie
 //        
 //        return cell
 //    }
+    
+    
     
 }

@@ -16,6 +16,7 @@
 		C61D9D1E1D2A968F00AB9B5D /* Soundtrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D9D1D1D2A968F00AB9B5D /* Soundtrack.swift */; };
 		C61D9D201D2A9E0000AB9B5D /* SoundtrackGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D9D1F1D2A9E0000AB9B5D /* SoundtrackGetter.swift */; };
 		C61ECC5C1D2CE36400FC1E59 /* SoundtrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61ECC5B1D2CE36400FC1E59 /* SoundtrackCell.swift */; };
+		C61ECC661D2E888800FC1E59 /* SoundtrackDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61ECC651D2E888800FC1E59 /* SoundtrackDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C61D9D1D1D2A968F00AB9B5D /* Soundtrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Soundtrack.swift; sourceTree = "<group>"; };
 		C61D9D1F1D2A9E0000AB9B5D /* SoundtrackGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundtrackGetter.swift; sourceTree = "<group>"; };
 		C61ECC5B1D2CE36400FC1E59 /* SoundtrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundtrackCell.swift; sourceTree = "<group>"; };
+		C61ECC651D2E888800FC1E59 /* SoundtrackDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundtrackDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				C61D9D081D2A967200AB9B5D /* AppDelegate.swift */,
 				C61D9D0A1D2A967200AB9B5D /* ListViewController.swift */,
+				C61ECC651D2E888800FC1E59 /* SoundtrackDetailVC.swift */,
 				C61D9D1D1D2A968F00AB9B5D /* Soundtrack.swift */,
 				C61D9D1F1D2A9E0000AB9B5D /* SoundtrackGetter.swift */,
 				C61ECC5B1D2CE36400FC1E59 /* SoundtrackCell.swift */,
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C61ECC661D2E888800FC1E59 /* SoundtrackDetailVC.swift in Sources */,
 				C61D9D0B1D2A967200AB9B5D /* ListViewController.swift in Sources */,
 				C61D9D201D2A9E0000AB9B5D /* SoundtrackGetter.swift in Sources */,
 				C61D9D1E1D2A968F00AB9B5D /* Soundtrack.swift in Sources */,
