@@ -19,23 +19,29 @@ class ListViewController: UIViewController, SoundtrackGetterDelegate, UITableVie
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         soundtrackGetter = SoundtrackGetter(delegate: self)
+        soundtrackGetter.getSoundtrack()
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.rowHeight = UITableViewAutomaticDimension
+
         self.tableView.estimatedRowHeight = 100
         self.tableView.reloadData()
         
     }
-
+    
+    override func viewWillAppear(animated: Bool) {
+//        print("Track title:\n\(soundTracks[0].trackName)")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func didGetSoundTracks(soundtracks: [Soundtrack]) {
-        
         self.soundTracks = soundtracks
-        print("Track title:\n\(soundTracks[0].trackName)")
+//        print("Track title:\n\(self.soundTracks[0].trackName)")
+
     }
     
     func didNotGetSoundTracks(error: NSError) {
@@ -65,6 +71,5 @@ class ListViewController: UIViewController, SoundtrackGetterDelegate, UITableVie
         print("Track title:\n\(self.soundTracks[0].trackName)")
         return cell
     }
-
+    
 }
-

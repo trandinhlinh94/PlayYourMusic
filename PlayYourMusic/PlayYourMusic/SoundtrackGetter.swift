@@ -43,13 +43,13 @@ class SoundtrackGetter {
                 // if error appears throw error message when trying to get data from server
                 print("Error:\n\(error)")
             }else {
-//                let dataString = String(data: data!, encoding: NSUTF8StringEncoding)
-//                print("Human-readable data:\n\(dataString!)")
+                //                let dataString = String(data: data!, encoding: NSUTF8StringEncoding)
+                //                print("Human-readable data:\n\(dataString!)")
                 // if it is successful, server sends response
                 // convert JSON data into Swift objects (dictionary type) using NSJSONSerialization and JSONObjectWithData
                 do {
                     let soundtrackData = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! [String: AnyObject]
-//                    print(soundtrackData)
+                    //                    print(soundtrackData)
                     
                     for entry in soundtrackData["results"] as! [NSDictionary] {
                         let soundtrack = Soundtrack(data: entry as! [String : AnyObject])
@@ -67,7 +67,7 @@ class SoundtrackGetter {
                 }
             }
         }
-        // the task is ready. fire it up 
+        // the task is ready. fire it up
         dataTask.resume()
         
     }
