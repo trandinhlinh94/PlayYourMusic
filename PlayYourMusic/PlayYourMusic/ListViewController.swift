@@ -23,14 +23,14 @@ class ListViewController: UIViewController, SoundtrackGetterDelegate, UITableVie
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.rowHeight = UITableViewAutomaticDimension
-
+        
         self.tableView.estimatedRowHeight = 100
         self.tableView.reloadData()
         
     }
     
     override func viewWillAppear(animated: Bool) {
-//        print("Track title:\n\(soundTracks[0].trackName)")
+        //        print("Track title:\n\(soundTracks[0].trackName)")
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,8 +40,9 @@ class ListViewController: UIViewController, SoundtrackGetterDelegate, UITableVie
     
     func didGetSoundTracks(soundtracks: [Soundtrack]) {
         self.soundTracks = soundtracks
-//        print("Track title:\n\(self.soundTracks[0].trackName)")
-
+        self.tableView.reloadData()
+        //        print("Track title:\n\(self.soundTracks[0].trackName)")
+        
     }
     
     func didNotGetSoundTracks(error: NSError) {
@@ -54,22 +55,34 @@ class ListViewController: UIViewController, SoundtrackGetterDelegate, UITableVie
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("Number of rows: \(soundTracks.count)")
         return self.soundTracks.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell:SoundtrackCell = self.tableView.dequeueReusableCellWithIdentifier("soundtrackCell") as! SoundtrackCell
-        cell.posterImage.image = nil
-        let soundtrack = self.soundTracks[indexPath.row]
-        let imagedata = NSData(contentsOfURL: NSURL(string: soundtrack.thumbnail)!)
-        if let tmpdata = imagedata {
-            cell.posterImage.image = UIImage(data: tmpdata)
+        func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+            let cellIdentifier = "soundtrackCell"
+            let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! SoundtrackCell
+            cell.posterImage.image = nil
+            let soundtrack = self.soundTracks[indexPath.row]
+            let imagedata = NSData(contentsOfURL: NSURL(string: soundtrack.thumbnail)!)
+            if let tmpdata = imagedata {
+                cell.posterImage.image = UIImage(data: tmpdata)
+            }
+            cell.artistName.text = soundtrack.artistName
+            cell.trackName.text = soundtrack.trackName
+            print("Track title:\n\(self.soundTracks[0].trackName)")
+            return cell
         }
-        cell.artistName.text = soundtrack.artistName
-        cell.trackName.text = soundtrack.trackName
-        print("Track title:\n\(self.soundTracks[0].trackName)")
-        return cell
-    }
+    
+//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        let cellIdentifier = "soundtrackCell"
+//        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! SoundtrackCell
+//        let track = soundTracks[indexPath.row]
+//        cell.artistName.text = track.artistName
+//        cell.trackName.text = track.trackName
+//        
+//        return cell
+//    }
     
 }
