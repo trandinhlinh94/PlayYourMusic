@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sgh-de-3kP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ob5-Er-YEu">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -100,12 +100,10 @@
                                             <outlet property="artistName" destination="CWL-cK-grY" id="RzB-E4-lBJ"/>
                                             <outlet property="posterImage" destination="PFW-CR-dYX" id="wum-VF-qX7"/>
                                             <outlet property="trackName" destination="oI6-Cf-uKw" id="6be-zx-GMZ"/>
+                                            <segue destination="Lbt-2V-FJg" kind="show" identifier="detail" id="rBJ-m2-ZXr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="28" width="400" height="572"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="sgh-de-3kP" id="w4J-vo-10v"/>
                                     <outlet property="delegate" destination="sgh-de-3kP" id="89b-yx-0NG"/>
@@ -113,22 +111,162 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="coj-f1-MMo" firstAttribute="top" secondItem="Hcv-Wf-253" secondAttribute="topMargin" constant="28" id="76B-pp-hci"/>
+                            <constraint firstItem="coj-f1-MMo" firstAttribute="bottom" secondItem="yoo-hV-afQ" secondAttribute="top" id="OQh-ZG-VVX"/>
+                            <constraint firstItem="coj-f1-MMo" firstAttribute="leading" secondItem="Hcv-Wf-253" secondAttribute="leading" id="ZUB-BV-tL9"/>
+                            <constraint firstAttribute="trailing" secondItem="coj-f1-MMo" secondAttribute="trailing" id="ap6-lu-fMn"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="coj-f1-MMo"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="76B-pp-hci"/>
+                                <exclude reference="OQh-ZG-VVX"/>
+                                <exclude reference="ZUB-BV-tL9"/>
+                                <exclude reference="ap6-lu-fMn"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="coj-f1-MMo"/>
                             </mask>
+                            <mask key="constraints">
+                                <include reference="76B-pp-hci"/>
+                                <include reference="OQh-ZG-VVX"/>
+                                <include reference="ZUB-BV-tL9"/>
+                                <include reference="ap6-lu-fMn"/>
+                            </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="QqZ-2k-LJv"/>
                     <connections>
                         <outlet property="tableView" destination="coj-f1-MMo" id="bgR-va-jKJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H55-4K-2O2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1441.5" y="380"/>
+        </scene>
+        <!--Soundtrack DetailVC-->
+        <scene sceneID="teM-KH-Te4">
+            <objects>
+                <viewController id="Lbt-2V-FJg" customClass="SoundtrackDetailVC" customModule="PlayYourMusic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wlg-zN-ElC"/>
+                        <viewControllerLayoutGuide type="bottom" id="dA5-yz-CJz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kb4-IQ-U3J">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xIe-xe-3Lj">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="536"/>
+                                </variation>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DIL-V4-9WE">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SWm-nK-i38">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <variation key="widthClass=compact" ambiguous="YES">
+                                        <rect key="frame" x="0.0" y="0.0" width="308" height="313"/>
+                                    </variation>
+                                </view>
+                                <blurEffect style="light"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="46" y="64" width="308" height="313"/>
+                                </variation>
+                            </visualEffectView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rxa-yD-OVW">
+                                <rect key="frame" x="0.0" y="0.0" width="110" height="200"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k9E-l0-py2">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="308" height="312"/>
+                                        </variation>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8RD-DU-7KC">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="200"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNS-m5-vC1">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <state key="normal" title="Prev"/>
+                                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="103" height="30"/>
+                                                </variation>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7v-Xs-XrF">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <state key="normal" title="Play"/>
+                                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                                    <rect key="frame" x="103" y="0.0" width="102" height="30"/>
+                                                </variation>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYx-8y-2Wg">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <state key="normal" title="Next"/>
+                                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                                    <rect key="frame" x="205" y="0.0" width="103" height="30"/>
+                                                </variation>
+                                            </button>
+                                        </subviews>
+                                        <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="312" width="308" height="30"/>
+                                        </variation>
+                                    </stackView>
+                                </subviews>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="46" y="64" width="308" height="342"/>
+                                </variation>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="xIe-xe-3Lj"/>
+                                <exclude reference="DIL-V4-9WE"/>
+                                <exclude reference="Rxa-yD-OVW"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="xIe-xe-3Lj"/>
+                                <include reference="DIL-V4-9WE"/>
+                                <include reference="Rxa-yD-OVW"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="bkImageView" destination="xIe-xe-3Lj" id="h8u-Sf-eLV"/>
+                        <outlet property="next" destination="qYx-8y-2Wg" id="TFH-iy-uHj"/>
+                        <outlet property="play" destination="e7v-Xs-XrF" id="bcS-bl-aQJ"/>
+                        <outlet property="posterImageView" destination="k9E-l0-py2" id="aQ7-zm-bW6"/>
+                        <outlet property="prev" destination="GNS-m5-vC1" id="rHG-0d-6Sl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u6Y-A0-sDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2197.5" y="380"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="afx-DG-fCq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ob5-Er-YEu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t0y-pW-xrE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sgh-de-3kP" kind="relationship" relationship="rootViewController" id="RTB-ds-Agv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CBN-S5-BpW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="526.5" y="380"/>
         </scene>
