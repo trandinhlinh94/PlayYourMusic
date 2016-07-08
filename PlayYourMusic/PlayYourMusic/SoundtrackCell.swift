@@ -10,10 +10,11 @@ import UIKit
 
 class SoundtrackCell: UITableViewCell {
     
-    // MARK PROPERTIES
+    // *** MARK PROPERTIES *** //
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var artistName: UILabel!
     @IBOutlet weak var trackName: UILabel!
+    // *** end *** //
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -9,12 +9,15 @@
 import Foundation
 
 class Soundtrack {
+    // *** MARK PROPERTIES *** //
     
     var trackName  : String
     var artistName : String
     var previewUrl : String
     var artworkUrl : String
     var thumbnail  : String
+    
+    // *** end *** //
     
     init(data : [String: AnyObject]) {
         self.artistName = data["artistName"] as! String
