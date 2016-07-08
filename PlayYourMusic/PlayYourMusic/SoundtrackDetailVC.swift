@@ -53,7 +53,7 @@ class SoundtrackDetailVC: UIViewController {
         isPlaying = !isPlaying
         
         if (isPlaying) {
-            self.playButton.setImage(UIImage(named: "paused"), forState: UIControlState.Normal)
+            self.playButton.setImage(UIImage(named: "pause"), forState: UIControlState.Normal)
             player?.play()
         } else {
             self.playButton.setImage(UIImage(named: "play"), forState: UIControlState.Normal)
