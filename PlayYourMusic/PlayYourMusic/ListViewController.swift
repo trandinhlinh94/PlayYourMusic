@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListViewController: UIViewController, SoundtrackGetterDelegate, UITableViewDataSource, UITableViewDelegate {
+class ListViewController: UIViewController, SoundtrackGetterDelegate, SoundTrackDetailVCDelegate, UITableViewDataSource, UITableViewDelegate {
     
     // *** MARK PROPERTIES *** //
     @IBOutlet weak var tableView: UITableView!
@@ -96,27 +96,27 @@ class ListViewController: UIViewController, SoundtrackGetterDelegate, UITableVie
             print(tmpTrack.artworkUrl)
             index = indexpath!.row
             let dvc = segue.destinationViewController as! SoundtrackDetailVC
-//            dvc.delegate = self
+            dvc.delegate = self
             dvc.soundtrack = tmpTrack
         }
     }
     
-//    func getNext() -> Soundtrack {
-//        index += 1
-//        if (index >= self.soundTracks.count) {
-//            index = 0
-//        }
-//        print("Get Next")
-//        return self.soundTracks[index]
-//    }
-//    
-//    func getPrev() -> Soundtrack {
-//    index -= 1;
-//        if(index != 0){
-//            index = self.soundTracks.count - 1
-//        }
-//    print("Get Prev")
-//    return self.soundTracks[index]
-//    }
+    func getNext() -> Soundtrack {
+        index += 1
+        if (index >= self.soundTracks.count) {
+            index = 0
+        }
+        print("Get Next")
+        return self.soundTracks[index]
+    }
+    
+    func getPrev() -> Soundtrack {
+    index -= 1;
+        if(index != 0){
+            index = self.soundTracks.count - 1
+        }
+    print("Get Prev")
+    return self.soundTracks[index]
+    }
     
 }
