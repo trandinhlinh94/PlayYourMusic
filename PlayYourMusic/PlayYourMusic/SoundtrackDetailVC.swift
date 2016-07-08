@@ -18,9 +18,9 @@ class SoundtrackDetailVC: UIViewController {
     // *** MARK PROPERTIES *** //
     @IBOutlet weak var bkImageView: UIImageView!
     @IBOutlet weak var posterImageView: UIImageView!
-//    @IBOutlet weak var prevButton: UIButton!
-//    @IBOutlet weak var playButton: UIButton!
-//    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var prevButton: UIButton!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     
     var delegate : SoundTrackDetailVCDelegate?
     var soundtrack : Soundtrack!
@@ -49,33 +49,33 @@ class SoundtrackDetailVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-//    @IBAction func play(sender: AnyObject) {
-//        //isPlaying != isPlaying
-//        
-//        if (isPlaying) {
-//            self.playButton.setImage(UIImage(named: "paused"), forState: UIControlState.Normal)
-//            player?.play()
-//        } else {
-//            self.playButton.setImage(UIImage(named: "play"), forState: UIControlState.Normal)
-//            player?.pause()
-//        }
-//    }
-//    
-//    @IBAction func prev(sender: AnyObject) {
-//        self.soundtrack = delegate?.getPrev()
-//        load()
-//        if(isPlaying){
-//            self.player?.play()
-//        }
-//    }
-//    
-//    @IBAction func next(sender: AnyObject) {
-//        self.soundtrack = delegate?.getNext()
-//        load()
-//        if(isPlaying) {
-//            self.player?.play()
-//        }
-//    }
+    @IBAction func play(sender: AnyObject) {
+        isPlaying = !isPlaying
+        
+        if (isPlaying) {
+            self.playButton.setImage(UIImage(named: "paused"), forState: UIControlState.Normal)
+            player?.play()
+        } else {
+            self.playButton.setImage(UIImage(named: "play"), forState: UIControlState.Normal)
+            player?.pause()
+        }
+    }
+    
+    @IBAction func prev(sender: AnyObject) {
+        self.soundtrack = delegate?.getPrev()
+        load()
+        if(isPlaying){
+            self.player?.play()
+        }
+    }
+    
+    @IBAction func next(sender: AnyObject) {
+        self.soundtrack = delegate?.getNext()
+        load()
+        if(isPlaying) {
+            self.player?.play()
+        }
+    }
     
     /*
     // MARK: - Navigation
