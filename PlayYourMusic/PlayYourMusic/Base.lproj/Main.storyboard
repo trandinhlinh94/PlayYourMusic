@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--List View Controller-->
+        <!--PlayYourMusic-->
         <scene sceneID="GPy-Cf-hu8">
             <objects>
                 <viewController id="sgh-de-3kP" customClass="ListViewController" customModule="PlayYourMusic" customModuleProvider="target" sceneMemberID="viewController">
@@ -140,7 +140,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="QqZ-2k-LJv"/>
+                    <navigationItem key="navigationItem" title="PlayYourMusic" id="QqZ-2k-LJv"/>
                     <connections>
                         <outlet property="tableView" destination="coj-f1-MMo" id="bgR-va-jKJ"/>
                     </connections>
@@ -266,12 +266,9 @@
                     </view>
                     <connections>
                         <outlet property="bkImageView" destination="xIe-xe-3Lj" id="h8u-Sf-eLV"/>
-                        <outlet property="next" destination="qYx-8y-2Wg" id="TFH-iy-uHj"/>
                         <outlet property="nextButton" destination="qYx-8y-2Wg" id="RB9-yO-cfQ"/>
-                        <outlet property="play" destination="e7v-Xs-XrF" id="bcS-bl-aQJ"/>
                         <outlet property="playButton" destination="e7v-Xs-XrF" id="r9y-TQ-rmU"/>
                         <outlet property="posterImageView" destination="k9E-l0-py2" id="aQ7-zm-bW6"/>
-                        <outlet property="prev" destination="GNS-m5-vC1" id="rHG-0d-6Sl"/>
                         <outlet property="prevButton" destination="GNS-m5-vC1" id="orq-sU-pyg"/>
                     </connections>
                 </viewController>
