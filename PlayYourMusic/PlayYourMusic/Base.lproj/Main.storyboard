@@ -51,18 +51,29 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Song Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oI6-Cf-uKw">
                                                             <rect key="frame" x="0.0" y="0.0" width="78" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Band Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWL-cK-grY">
                                                             <rect key="frame" x="78" y="0.0" width="89" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEv-V7-DFU">
+                                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="0.0" y="48" width="112" height="18"/>
+                                                            </variation>
+                                                        </label>
                                                     </subviews>
-                                                    <variation key="widthClass=compact" axis="vertical"/>
+                                                    <variation key="widthClass=compact" axis="vertical" misplaced="YES">
+                                                        <rect key="frame" x="116" y="8" width="112" height="66"/>
+                                                    </variation>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -99,6 +110,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="artistName" destination="CWL-cK-grY" id="RzB-E4-lBJ"/>
+                                            <outlet property="genre" destination="ZEv-V7-DFU" id="nMD-AR-iV7"/>
                                             <outlet property="posterImage" destination="PFW-CR-dYX" id="wum-VF-qX7"/>
                                             <outlet property="trackName" destination="oI6-Cf-uKw" id="6be-zx-GMZ"/>
                                             <segue destination="Lbt-2V-FJg" kind="show" identifier="detail" id="rBJ-m2-ZXr"/>
@@ -216,6 +228,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -258,12 +271,22 @@
                                     </mask>
                                 </variation>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fp7-bE-JcE">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="156" y="450" width="88" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DIL-V4-9WE" firstAttribute="trailing" secondItem="Rxa-yD-OVW" secondAttribute="trailing" id="1UU-1V-7kT"/>
                             <constraint firstItem="Rxa-yD-OVW" firstAttribute="top" secondItem="DIL-V4-9WE" secondAttribute="top" id="8s7-uR-EnR"/>
                             <constraint firstItem="Rxa-yD-OVW" firstAttribute="leading" secondItem="DIL-V4-9WE" secondAttribute="leading" id="NUm-tw-0ZN"/>
+                            <constraint firstItem="Fp7-bE-JcE" firstAttribute="top" secondItem="e7v-Xs-XrF" secondAttribute="bottom" constant="44" id="QeM-PJ-kn7"/>
                             <constraint firstItem="DIL-V4-9WE" firstAttribute="leading" secondItem="Kb4-IQ-U3J" secondAttribute="leadingMargin" constant="26" id="RBD-vY-DV7"/>
                             <constraint firstAttribute="trailing" secondItem="xIe-xe-3Lj" secondAttribute="trailing" id="TM5-Kc-AAj"/>
                             <constraint firstItem="xIe-xe-3Lj" firstAttribute="top" secondItem="Rxa-yD-OVW" secondAttribute="top" id="ViK-8V-hhu"/>
@@ -278,20 +301,22 @@
                             <mask key="subviews">
                                 <exclude reference="DIL-V4-9WE"/>
                                 <exclude reference="Rxa-yD-OVW"/>
+                                <exclude reference="Fp7-bE-JcE"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="fYA-XH-xJs"/>
-                                <exclude reference="pLh-mu-kmf"/>
-                                <exclude reference="1UU-1V-7kT"/>
-                                <exclude reference="RBD-vY-DV7"/>
                                 <exclude reference="TM5-Kc-AAj"/>
                                 <exclude reference="ViK-8V-hhu"/>
                                 <exclude reference="hxo-Ic-x5i"/>
                                 <exclude reference="pou-A7-L6Z"/>
                                 <exclude reference="sRS-OA-bQK"/>
                                 <exclude reference="u7Y-0h-JVt"/>
+                                <exclude reference="1UU-1V-7kT"/>
+                                <exclude reference="RBD-vY-DV7"/>
                                 <exclude reference="8s7-uR-EnR"/>
                                 <exclude reference="NUm-tw-0ZN"/>
+                                <exclude reference="QeM-PJ-kn7"/>
+                                <exclude reference="fYA-XH-xJs"/>
+                                <exclude reference="pLh-mu-kmf"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -304,20 +329,22 @@
                                 <include reference="xIe-xe-3Lj"/>
                                 <include reference="DIL-V4-9WE"/>
                                 <include reference="Rxa-yD-OVW"/>
+                                <include reference="Fp7-bE-JcE"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="fYA-XH-xJs"/>
-                                <include reference="pLh-mu-kmf"/>
-                                <include reference="1UU-1V-7kT"/>
-                                <include reference="RBD-vY-DV7"/>
                                 <include reference="TM5-Kc-AAj"/>
                                 <include reference="ViK-8V-hhu"/>
                                 <include reference="hxo-Ic-x5i"/>
                                 <include reference="pou-A7-L6Z"/>
                                 <include reference="sRS-OA-bQK"/>
                                 <include reference="u7Y-0h-JVt"/>
+                                <include reference="1UU-1V-7kT"/>
+                                <include reference="RBD-vY-DV7"/>
                                 <include reference="8s7-uR-EnR"/>
                                 <include reference="NUm-tw-0ZN"/>
+                                <include reference="QeM-PJ-kn7"/>
+                                <include reference="fYA-XH-xJs"/>
+                                <include reference="pLh-mu-kmf"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
@@ -328,10 +355,12 @@
                     </view>
                     <connections>
                         <outlet property="bkImageView" destination="xIe-xe-3Lj" id="h8u-Sf-eLV"/>
+                        <outlet property="description" destination="Fp7-bE-JcE" id="KSE-yc-UNh"/>
                         <outlet property="nextButton" destination="qYx-8y-2Wg" id="RB9-yO-cfQ"/>
                         <outlet property="playButton" destination="e7v-Xs-XrF" id="r9y-TQ-rmU"/>
                         <outlet property="posterImageView" destination="k9E-l0-py2" id="aQ7-zm-bW6"/>
                         <outlet property="prevButton" destination="GNS-m5-vC1" id="orq-sU-pyg"/>
+                        <outlet property="trackdescription" destination="Fp7-bE-JcE" id="kLK-Bx-mtY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6Y-A0-sDP" userLabel="First Responder" sceneMemberID="firstResponder"/>

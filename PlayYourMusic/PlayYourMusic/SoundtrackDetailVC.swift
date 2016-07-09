@@ -18,6 +18,7 @@ class SoundtrackDetailVC: UIViewController {
     // *** MARK PROPERTIES *** //
     @IBOutlet weak var bkImageView: UIImageView!
     @IBOutlet weak var posterImageView: UIImageView!
+//    @IBOutlet weak var trackdescription: UILabel!
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
@@ -40,7 +41,7 @@ class SoundtrackDetailVC: UIViewController {
             bkImageView.image = UIImage(data: tmpdata)
             posterImageView.image = UIImage(data: tmpdata)
         }
-        
+//        trackdescription.text = soundtrack.description
         player = AVPlayer(URL: NSURL(string: soundtrack.previewUrl)!)
     }
 

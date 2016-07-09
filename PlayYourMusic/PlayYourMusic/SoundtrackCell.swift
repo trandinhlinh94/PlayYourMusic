@@ -14,6 +14,7 @@ class SoundtrackCell: UITableViewCell {
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var artistName: UILabel!
     @IBOutlet weak var trackName: UILabel!
+    @IBOutlet weak var genre: UILabel!
     // *** end *** //
     
     override func awakeFromNib() {

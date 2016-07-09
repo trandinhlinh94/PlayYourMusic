@@ -16,6 +16,8 @@ class Soundtrack {
     var previewUrl : String
     var artworkUrl : String
     var thumbnail  : String
+    var genre      : String
+//    var description: String
     
     // *** end *** //
     
@@ -25,6 +27,8 @@ class Soundtrack {
         self.previewUrl = data["previewUrl"] as! String
         self.artworkUrl = (data["artworkUrl100"] as! String).stringByReplacingOccurrencesOfString("100x100", withString: "640x480")
         self.thumbnail = data["artworkUrl100"] as! String
+        self.genre = data["primaryGenreName"] as! String
+//        self.description = data["collectionName"] as! String
     }
     
 }
