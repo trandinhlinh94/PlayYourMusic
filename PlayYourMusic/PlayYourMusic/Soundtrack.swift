@@ -17,7 +17,7 @@ class Soundtrack {
     var artworkUrl : String
     var thumbnail  : String
     var genre      : String
-    var description: String?
+    var description: String
     
     // *** end *** //
     

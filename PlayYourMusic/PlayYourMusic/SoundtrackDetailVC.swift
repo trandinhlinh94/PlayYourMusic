@@ -18,7 +18,9 @@ class SoundtrackDetailVC: UIViewController {
     // *** MARK PROPERTIES *** //
     @IBOutlet weak var bkImageView: UIImageView!
     @IBOutlet weak var posterImageView: UIImageView!
-    @IBOutlet weak var trackdescription: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var bandNameLabel: UILabel!
+    @IBOutlet weak var trackdescription: UITextView!
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
@@ -31,6 +33,8 @@ class SoundtrackDetailVC: UIViewController {
     // *** end *** //
     
     override func viewDidLoad() {
+        titleLabel.text = " "
+        bandNameLabel.text = " "
         trackdescription.text = " "
         super.viewDidLoad()
         load()
@@ -42,7 +46,9 @@ class SoundtrackDetailVC: UIViewController {
             bkImageView.image = UIImage(data: tmpdata)
             posterImageView.image = UIImage(data: tmpdata)
         }
-        trackdescription.text = soundtrack.description
+        titleLabel.text = "Track Title: \(soundtrack.trackName)"
+        bandNameLabel.text = "Artist: \(soundtrack.artistName)"
+        trackdescription.text = "Description: \(soundtrack.description) \n Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
         player = AVPlayer(URL: NSURL(string: soundtrack.previewUrl)!)
     }
 
