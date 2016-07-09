@@ -83,6 +83,8 @@ class ListViewController: UIViewController, SoundtrackGetterDelegate, SoundTrack
         }
         cell.artistName.text = soundtrack.artistName
         cell.trackName.text = soundtrack.trackName
+        cell.genre.text = soundtrack.genre
+//        print(soundtrack.description)
         return cell
     }
     // *** end *** //
