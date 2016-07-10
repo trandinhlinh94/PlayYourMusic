@@ -27,16 +27,17 @@ class SoundtrackGetter {
     
     var soundTracks: [Soundtrack] = []
     
-    func getSoundtrack() {
+    func getSoundtrack(searchedTerm: String) {
         // create a networking task with shared session
         let session = NSURLSession.sharedSession()
         
         // construct the URL to fetch data
-        let soundtrackURL = NSURL(string: "https://itunes.apple.com/search?term=one%20republic")
+//        let soundtrackURL = NSURL(string: "https://itunes.apple.com/search?term=one%20republic")
+        let soundtrackURL = NSURL(string: "https://itunes.apple.com/search?term=\(searchedTerm)")!
         
         // getting data from api into datatask
         // NSSessionDataTask is used for downloading data from server to memory
-        let dataTask = session.dataTaskWithURL(soundtrackURL!) {
+        let dataTask = session.dataTaskWithURL(soundtrackURL) {
             // the completion handler is executed only when the task is finished requesting and retrieving data from server
             (data: NSData?, response: NSURLResponse?, error: NSError?) in
             if let error = error {

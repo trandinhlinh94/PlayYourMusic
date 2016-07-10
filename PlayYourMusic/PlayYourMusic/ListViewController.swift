@@ -24,7 +24,7 @@ class ListViewController: UIViewController, SoundtrackGetterDelegate, SoundTrack
         super.viewDidLoad()
         
         soundtrackGetter = SoundtrackGetter(delegate: self)
-        soundtrackGetter.getSoundtrack()
+        soundtrackGetter.getSoundtrack(searchedTerm)
         
         // set the delegate and datasource of tableView to be itself to watch for the changes
         self.tableView.delegate = self
@@ -34,7 +34,7 @@ class ListViewController: UIViewController, SoundtrackGetterDelegate, SoundTrack
         self.tableView.estimatedRowHeight = 100
         
         self.tableView.reloadData()
-        print(searchedTerm)
+
     }
     
     override func viewWillAppear(animated: Bool) {
