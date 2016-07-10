@@ -40,7 +40,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     // MARK UITextFieldDelegate and its methods
     
-    // Enable the "Search" for your city above button
+    // Enable the "Search" button
     // if the search text field contains any text,
     // disable it otherwise.
     func textField(textField: UITextField,
