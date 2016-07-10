@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ob5-Er-YEu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="j2i-7I-Iw2">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,6 +7,110 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--PlayYourMusic-->
+        <scene sceneID="8HL-nB-61g">
+            <objects>
+                <viewController id="NWm-XJ-0Dz" customClass="SearchViewController" customModule="PlayYourMusic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HoG-Y4-9BT"/>
+                        <viewControllerLayoutGuide type="bottom" id="GgJ-4K-YRV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YR3-25-VeZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IxX-Mw-Q4Y">
+                                <rect key="frame" x="141" y="178" width="318" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="141" y="-22" width="518" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2l2-3X-ZhC">
+                                <rect key="frame" x="276" y="267" width="48" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="276" y="59" width="248" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="getSearchedArtistButtonTapped:" destination="NWm-XJ-0Dz" eventType="touchUpInside" id="Pqo-gw-iBS"/>
+                                    <segue destination="sgh-de-3kP" kind="show" identifier="listView" id="rIM-cz-ndu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IxX-Mw-Q4Y" firstAttribute="top" secondItem="HoG-Y4-9BT" secondAttribute="bottom" constant="114" id="2he-18-4Zq"/>
+                            <constraint firstItem="IxX-Mw-Q4Y" firstAttribute="leading" secondItem="YR3-25-VeZ" secondAttribute="leadingMargin" constant="121" id="2k6-h9-Kio"/>
+                            <constraint firstItem="2l2-3X-ZhC" firstAttribute="centerX" secondItem="YR3-25-VeZ" secondAttribute="centerX" id="5xS-9w-sbG"/>
+                            <constraint firstItem="2l2-3X-ZhC" firstAttribute="centerX" secondItem="IxX-Mw-Q4Y" secondAttribute="centerX" id="CpS-r4-BDw"/>
+                            <constraint firstItem="2l2-3X-ZhC" firstAttribute="top" secondItem="HoG-Y4-9BT" secondAttribute="bottom" constant="203" id="FpF-T7-37r"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IxX-Mw-Q4Y" secondAttribute="trailing" constant="121" id="QzN-Zi-lOO"/>
+                            <constraint firstItem="2l2-3X-ZhC" firstAttribute="top" secondItem="IxX-Mw-Q4Y" secondAttribute="bottom" constant="59" id="alQ-qF-HDp"/>
+                        </constraints>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <include reference="IxX-Mw-Q4Y"/>
+                                <include reference="2l2-3X-ZhC"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="IxX-Mw-Q4Y"/>
+                                <include reference="2l2-3X-ZhC"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="IxX-Mw-Q4Y"/>
+                                <include reference="2l2-3X-ZhC"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="IxX-Mw-Q4Y"/>
+                                <include reference="2l2-3X-ZhC"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="IxX-Mw-Q4Y"/>
+                                <include reference="2l2-3X-ZhC"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="IxX-Mw-Q4Y"/>
+                                <include reference="2l2-3X-ZhC"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="IxX-Mw-Q4Y"/>
+                                <include reference="2l2-3X-ZhC"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="IxX-Mw-Q4Y"/>
+                                <include reference="2l2-3X-ZhC"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="PlayYourMusic" id="7gO-nk-WLz"/>
+                    <connections>
+                        <outlet property="searchButton" destination="2l2-3X-ZhC" id="ggR-mj-hgv"/>
+                        <outlet property="searchTextField" destination="IxX-Mw-Q4Y" id="itc-TS-0Pf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LTv-nq-e9F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1541" y="378"/>
+        </scene>
         <!--PlayYourMusic-->
         <scene sceneID="GPy-Cf-hu8">
             <objects>
@@ -254,7 +358,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H55-4K-2O2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1470" y="378"/>
+            <point key="canvasLocation" x="2282" y="378"/>
         </scene>
         <!--Soundtrack DetailVC-->
         <scene sceneID="teM-KH-Te4">
@@ -607,25 +711,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6Y-A0-sDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2163" y="378"/>
+            <point key="canvasLocation" x="2975" y="378"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="afx-DG-fCq">
+        <scene sceneID="Osi-ah-04q">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ob5-Er-YEu" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j2i-7I-Iw2" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t0y-pW-xrE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="so6-Wa-mYe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="sgh-de-3kP" kind="relationship" relationship="rootViewController" id="RTB-ds-Agv"/>
+                        <segue destination="NWm-XJ-0Dz" kind="relationship" relationship="rootViewController" id="19W-Lk-luk"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CBN-S5-BpW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4oZ-9v-YYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="526.5" y="380"/>
+            <point key="canvasLocation" x="729" y="378"/>
         </scene>
     </scenes>
     <resources>
