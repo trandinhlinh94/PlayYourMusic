@@ -15,6 +15,9 @@ class ListViewController: UIViewController, SoundtrackGetterDelegate, SoundTrack
     var soundTracks :[Soundtrack] = []
     var soundtrackGetter : SoundtrackGetter!
     var index = 0
+    
+    var searchedTerm: String!
+    
     // *** end *** //
     
     override func viewDidLoad() {
@@ -31,7 +34,7 @@ class ListViewController: UIViewController, SoundtrackGetterDelegate, SoundTrack
         self.tableView.estimatedRowHeight = 100
         
         self.tableView.reloadData()
-        
+        print(searchedTerm)
     }
     
     override func viewWillAppear(animated: Bool) {
